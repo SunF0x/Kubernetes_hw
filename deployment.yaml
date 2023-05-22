@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels:
+    app: web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: sunf0x/app:1.0.0
+          ports:
+            - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              path: /hello_world.html
+              port: 8000
+            initialDelaySeconds: 3
+            periodSeconds: 3
