@@ -15,7 +15,7 @@ docker run -ti --rm -p 8000:8000 --name app --network host sunf0x/app:1.0.0
 docker push sunf0x/app:1.0.0
 docker pull sunf0x/app:1.0.0
 ```
-6) Установили `minicube` и запустили в докере ( потому что в Windows иначе возникают конфликты с wsl2 )
+6) Установили `minikube` и запустили в докере ( потому что в Windows иначе возникают конфликты с wsl2 )
 ```
 minikube start --driver=docker
 ```
